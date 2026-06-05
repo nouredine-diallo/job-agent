@@ -1,0 +1,17 @@
+target:
+  roles: ["Alternance Développeur Python", "Alternance IA", "Alternance Data", "Apprenti Ingénieur IA"]
+  contract_types: ["Alternance", "Apprentissage", "Contrat de professionnalisation"]
+  locations: ["Lyon", "Villeurbanne", "Auvergne-Rhône-Alpes", "Remote"]
+  academic_level: "L2 Informatique (recherche alternance niveau Bac+3/Bachelor)"
+skills:
+  strong: ["Python", "LangChain", "RAG", "Prompt Engineering", "SQL", "Git", "GitHub Actions (CI/CD)"]
+  intermediate: ["FastAPI", "C++", "Pandas", "Pydantic", "Docker", "pytest"]
+  learning: ["Data Engineering avancé", "Déploiement Cloud (Vertex AI)"]
+key_projects_to_highlight:
+  - "Agent RAG déployé sur HuggingFace avec CI/CD et évalué (Recall@5/MRR)"
+  - "Wrapper LLM générant des scripts viraux validé par  @LeMediaAuto"
+  - "Pipeline Data Cleaner avec Pydantic et Polars"
+exclusion_rules:
+  - "Rejeter si l'offre exige strictement un niveau Master/Bac+5 pour commencer"
+  - "Rejeter si l'offre exige plus de 2 ans d'expérience en entreprise (hors projets/restauration)"
+  - "Rejeter si la stack est 100% Java, C# ou PHP sans lien avec la Data/IA"

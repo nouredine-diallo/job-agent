@@ -1,0 +1,32 @@
+name: JobAgent — Collecte quotidienne
+
+on:
+  schedule:
+    - cron: "13 5 * * *"   # 07:13 heure de Paris (UTC+2) → 05:13 UTC
+  workflow_dispatch:       # permet un lancement manuel depuis GitHub
+
+jobs:
+  scrape-and-alert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Créer le .env depuis les secrets
+        run: |
+          echo "GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}" >> .env
+          echo "TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}" >> .env
+          echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}" >> .env
+          echo 'GSPREAD_CREDENTIALS=${{ secrets.GSPREAD_CREDENTIALS }}' >> .env
+
+      - name: Lancer le pipeline
+        run: python main.py

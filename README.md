@@ -45,7 +45,7 @@ python main.py --audit # mode test sans envoi
 | `TELEGRAM_BOT_TOKEN` | Réception des drafts | Oui |
 | `GSPREAD_CREDENTIALS` | Mémoire des offres traitées | Oui (Google Sheet) |
 
-## Ce que j'ai construit (vs généré)
+## Ce que j'ai construit 
 
 **Architecture agentique modulaire.** Chaque agent (`scraper.py`, `analyzer.py`, `finder.py`, `emailer.py`) est indépendant, testable seul, avec une interface `run()` standard.
 
@@ -80,7 +80,7 @@ Le rapport d'audit est envoyé sur Telegram et sauvegardé en `audit_log_*.json`
 
 \* Faux positif détecté pendant l'audit, corrigé par l'ajout d'un pré-filtre regex et d'une règle de rejet absolu.
 
-## Limites (assumées)
+## Limites 
 
 - **Le scoring est 100% LLM** — pas de métriques de conversion réelles, pas de boucle de rétroaction
 - **Les douleurs B2B (cold) sont inférées** par le LLM depuis le secteur d'activité, sans validation terrain
